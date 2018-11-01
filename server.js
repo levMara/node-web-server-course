@@ -16,10 +16,10 @@ app.use((req, res, next) => {
   var log = `${now}: ${req.method} ${req.url}`;
 
   console.log(log);
-  // fs.appendFile('server.log', log + '\n', (error) => {
-  //   if (err)
-  //     console.log('Unable log to server.log.');
-  // });
+  fs.appendFile('server.log', log + '\n', (error) => {
+    if (err)
+      console.log('Unable log to server.log.');
+  });
   next();
 });
 
